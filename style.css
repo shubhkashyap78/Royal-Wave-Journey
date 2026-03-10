@@ -2644,3 +2644,183 @@ footer {
 .enquiry-form select::placeholder {
     color: rgba(255,255,255,0.7);
 }
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    /* Header */
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin: 15px 0;
+    }
+    
+    .book-now-btn {
+        margin: 0;
+    }
+    
+    /* Hero Section */
+    .hero {
+        flex-direction: column;
+        padding: 1rem;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .hero-content {
+        padding: 1rem;
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-form {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 20px;
+        padding: 1rem;
+    }
+    
+    /* Contact Section */
+    .contact .container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .contact-info,
+    .enquiry-form {
+        max-width: 100%;
+    }
+    
+    /* Testimonials */
+    .testimonial-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    /* Section Headings */
+    section h2 {
+        font-size: 2rem;
+    }
+    
+    .fleet h2,
+    .services h2,
+    .why-choose-us h2,
+    .testimonials h2,
+    .contact h2,
+    .about-wrapper .about-content h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screens */
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .package-grid,
+    .service-grid,
+    .activity-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .fleet-grid {
+        flex-direction: column;
+    }
+    
+    .fleet-card {
+        min-width: 100%;
+    }
+}
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: #333;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 50px;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links li {
+        margin: 20px 0;
+    }
+    
+    .book-now-btn {
+        display: none;
+    }
+    
+    .nav-links.active ~ .book-now-btn {
+        display: block;
+        position: fixed;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+}
