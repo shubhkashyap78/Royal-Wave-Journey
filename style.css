@@ -2549,3 +2549,98 @@ footer {
         text-align: center;
     }
 }
+/* Hero Form Position Adjustment */
+.hero-form {
+    top: 50px !important;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.quick-form {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.quick-form textarea {
+    rows: 2 !important;
+    min-height: 60px;
+}
+
+@media (max-width: 768px) {
+    .hero-form {
+        position: relative !important;
+        top: 0 !important;
+        max-height: none;
+        margin-top: 30px;
+    }
+}
+/* Contact Form Styling */
+.enquiry-form select,
+.enquiry-form input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background: white;
+}
+
+.enquiry-form select:focus,
+.enquiry-form input[type="date"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+
+.enquiry-form select option {
+    padding: 8px;
+}
+
+/* Ensure consistent styling for all form elements */
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.enquiry-form input:hover,
+.enquiry-form select:hover,
+.enquiry-form textarea:hover {
+    border-color: #007bff;
+}
+/* Updated Contact Form Styling */
+.enquiry-form select,
+.enquiry-form input[type="date"] {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 16px;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+}
+
+.enquiry-form select:focus,
+.enquiry-form input[type="date"]:focus {
+    border-color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.15);
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.enquiry-form select option {
+    background: #333;
+    color: white;
+    padding: 8px;
+}
+
+.enquiry-form select::placeholder {
+    color: rgba(255,255,255,0.7);
+}
