@@ -193,6 +193,17 @@ nav {
     white-space: nowrap;
 }
 
+/* Exclude dropdown toggles from nav-links hover */
+.nav-links .dropdown-toggle {
+    padding: 8px 12px !important;
+}
+
+.nav-links .dropdown-toggle:hover {
+    color: #fff !important;
+    transform: none !important;
+    scale: 1 !important;
+}
+
 .nav-links a:hover {
     color: #ccc;
     transform: scale(1.1);
@@ -252,6 +263,15 @@ nav {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .dropdown:hover .dropdown-menu {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(-10px) !important;
+        max-height: 0 !important;
+    }
 }
 
 .dropdown-menu li {
@@ -3720,7 +3740,7 @@ body {
         display: none;
     }
     
-    .dropdown:hover .dropdown-menu {
+    .dropdown.active .dropdown-menu {
         display: block;
     }
     
@@ -4877,5 +4897,69 @@ body {
     .read-more-btn {
         padding: 12px 25px;
         font-size: 14px;
+    }
+}
+
+
+/* Footer Credit Link */
+.footer-credit {
+    color: #1CA8CB;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.footer-credit:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+/* Mobile Dropdown Fix */
+@media (max-width: 768px) {
+    /* Force mobile dropdown visibility rules to win against earlier blocks */
+    .nav-links .dropdown-menu {
+        display: none !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+    
+    .nav-links .dropdown.active > .dropdown-menu {
+        display: block !important;
+        max-height: 500px !important;
+        overflow-y: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        padding: 10px 0 !important;
+    }
+
+    .dropdown-menu {
+        margin-top: 0 !important;
+        border-radius: 0 !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        max-height: 500px !important;
+        padding: 10px 0 !important;
+    }
+    
+    .dropdown-toggle {
+        display: flex !important;
+        align-items: center !important;
+        gap: 5px !important;
+    }
+    
+    .dropdown.active .dropdown-toggle i {
+        transform: rotate(180deg) !important;
+    }
+    
+    .dropdown-menu a {
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
     }
 }

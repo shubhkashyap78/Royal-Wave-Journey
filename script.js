@@ -8,15 +8,17 @@ if (hamburger && navLinks) {
         navLinks.classList.toggle('active');
     });
 
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
+    document.querySelectorAll('.nav-links a, .nav-links button').forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Keep the mobile menu open when toggling dropdowns
+            if (e.currentTarget.classList.contains('dropdown-toggle')) {
+                return;
+            }
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
         });
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
             hamburger.classList.remove('active');
@@ -25,37 +27,36 @@ if (hamburger && navLinks) {
     });
 }
 
-// Dropdown Menu Functionality
+// Dropdown Menu Functionality - MOBILE ONLY
 document.addEventListener('DOMContentLoaded', () => {
     const dropdowns = document.querySelectorAll('.dropdown');
     
     dropdowns.forEach(dropdown => {
         const toggle = dropdown.querySelector('.dropdown-toggle');
         
-        // Desktop hover functionality is handled by CSS
-        // Mobile click functionality
         if (toggle) {
             toggle.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                    
-                    // Close other dropdowns
-                    dropdowns.forEach(otherDropdown => {
-                        if (otherDropdown !== dropdown) {
-                            otherDropdown.classList.remove('active');
-                        }
-                    });
-                }
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Close other dropdowns
+                dropdowns.forEach(d => {
+                    if (d !== dropdown) {
+                        d.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current
+                dropdown.classList.toggle('active');
             });
         }
     });
     
-    // Close dropdowns when clicking outside
+    // Close on outside click
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.dropdown')) {
-            dropdowns.forEach(dropdown => {
-                dropdown.classList.remove('active');
+            dropdowns.forEach(d => {
+                d.classList.remove('active');
             });
         }
     });
@@ -67,7 +68,7 @@ class HeroCarousel {
         this.slider = document.querySelector('.hero-slider');
         this.images = document.querySelectorAll('.hero-slider img');
         this.currentIndex = 0;
-        this.intervalTime = 4000; // 4 seconds
+        this.intervalTime = 4000;
         this.interval = null;
         
         if (this.slider && this.images.length > 0) {
@@ -76,16 +77,13 @@ class HeroCarousel {
     }
     
     init() {
-        // Hide all images initially
         this.images.forEach((img, index) => {
             img.style.opacity = index === 0 ? '1' : '0';
             img.style.zIndex = index === 0 ? '1' : '0';
         });
         
-        // Start auto-slide
         this.startAutoSlide();
         
-        // Pause on hover
         this.slider.addEventListener('mouseenter', () => this.stopAutoSlide());
         this.slider.addEventListener('mouseleave', () => this.startAutoSlide());
     }
@@ -94,11 +92,9 @@ class HeroCarousel {
         const currentImg = this.images[this.currentIndex];
         const nextImg = this.images[index];
         
-        // Fade out current image
         currentImg.style.opacity = '0';
         currentImg.style.zIndex = '0';
         
-        // Fade in next image
         nextImg.style.opacity = '1';
         nextImg.style.zIndex = '1';
         
@@ -124,7 +120,6 @@ class HeroCarousel {
     }
 }
 
-// Initialize carousel and counter when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new HeroCarousel();
     new CounterAnimation();
@@ -132,9 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollToTop();
 });
 
-// Scroll to Top Functionality
 function initScrollToTop() {
-    // Create scroll to top button if it doesn't exist
     let scrollBtn = document.getElementById('scrollToTopBtn');
     if (!scrollBtn) {
         scrollBtn = document.createElement('div');
@@ -145,7 +138,6 @@ function initScrollToTop() {
         document.body.appendChild(scrollBtn);
     }
     
-    // Show/hide scroll button based on scroll position
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
             scrollBtn.classList.add('show');
@@ -154,7 +146,6 @@ function initScrollToTop() {
         }
     });
     
-    // Scroll to top when clicked
     scrollBtn.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
@@ -163,7 +154,6 @@ function initScrollToTop() {
     });
 }
 
-// WhatsApp Chat Widget Functionality
 function initWhatsAppChat() {
     const chatBtn = document.getElementById('whatsappChatBtn');
     const chatBox = document.getElementById('whatsappChatBox');
@@ -172,30 +162,26 @@ function initWhatsAppChat() {
     const chatInput = document.getElementById('chatInput');
     const quickReplies = document.querySelectorAll('.quick-reply');
     
-    // Toggle chat box
     if (chatBtn) {
         chatBtn.addEventListener('click', () => {
             chatBox.classList.toggle('active');
         });
     }
     
-    // Close chat box
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
             chatBox.classList.remove('active');
         });
     }
     
-    // Send message to WhatsApp
     function sendToWhatsApp(message) {
-        const phoneNumber = '+919242178600'; // Your WhatsApp number
+        const phoneNumber = '+919242178600';
         const encodedMessage = encodeURIComponent(`Hello! ${message}`);
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
         window.open(whatsappURL, '_blank');
         chatBox.classList.remove('active');
     }
     
-    // Handle quick replies
     quickReplies.forEach(reply => {
         reply.addEventListener('click', () => {
             const message = reply.getAttribute('data-message');
@@ -203,7 +189,6 @@ function initWhatsAppChat() {
         });
     });
     
-    // Handle send button
     if (sendBtn) {
         sendBtn.addEventListener('click', () => {
             const message = chatInput.value.trim();
@@ -214,7 +199,6 @@ function initWhatsAppChat() {
         });
     }
     
-    // Handle enter key
     if (chatInput) {
         chatInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
@@ -227,7 +211,6 @@ function initWhatsAppChat() {
         });
     }
     
-    // Close chat when clicking outside
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.whatsapp-chat-widget')) {
             chatBox.classList.remove('active');
@@ -235,10 +218,8 @@ function initWhatsAppChat() {
     });
 }
 
-// Form Submission Handler - Now handled by EmailJS in index.html
-
-// Smooth Scrolling for Navigation Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// Smooth Scrolling for Navigation Links (excluding dropdown toggles)
+document.querySelectorAll('a[href^="#"]:not(.dropdown-toggle)').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
@@ -259,12 +240,10 @@ window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
     if (scrollTop > 50) {
-        // Scrolling down - hide top nav
         if (topNav) {
             topNav.classList.add('hidden');
         }
     } else {
-        // At top - show top nav
         if (topNav) {
             topNav.classList.remove('hidden');
         }
@@ -306,8 +285,8 @@ class CounterAnimation {
     startCounting() {
         this.counters.forEach(counter => {
             const target = parseInt(counter.textContent);
-            const duration = 2000; // 2 seconds
-            const increment = target / (duration / 16); // 60fps
+            const duration = 2000;
+            const increment = target / (duration / 16);
             let current = 0;
             
             counter.textContent = '0';
