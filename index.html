@@ -6,9 +6,37 @@
     <title>Royal Wave Journey - Andaman Tourism</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <!-- Top Navigation Bar -->
+        <div class="top-nav">
+            <div class="top-nav-container">
+                <div class="top-nav-left">
+                    <a href="tel:+919242178600" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91-9242178600</span>
+                    </a>
+                    <a href="https://maps.google.com/?q=Port+Blair,+Andaman" target="_blank" class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Port Blair, Andaman</span>
+                    </a>
+                </div>
+                <div class="top-nav-right">
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Navigation -->
         <nav>
             <div class="logo">
                 <h1>Royal Wave Journey</h1>
@@ -20,14 +48,52 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#packages">Tour Packages</a></li>
-                <li><a href="#hotels">Hotels</a></li>
-                <li><a href="#activities">Activities</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#packages" class="dropdown-toggle">Tour Packages <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="package1.html">3N/4D Port Blair - Havelock Tour</a></li>
+                        <li><a href="package2.html">4N/5D Port Blair - Havelock - Neil Island</a></li>
+                        <li><a href="package3.html">5N/6D Port Blair - Havelock - Neil Island</a></li>
+                        <li><a href="package4.html">3N/4D Port Blair - Havelock Package</a></li>
+                        <li><a href="package5.html">4N/5D Neil Island Tour</a></li>
+                        <li><a href="package6.html">5N/6D Complete Andaman Package</a></li>
+                        <li><a href="#packages" class="view-all">View All Packages</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#services" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="tour-operators.html">Tour Operators</a></li>
+                        <li><a href="car-rental.html">Car & Coach Rental</a></li>
+                        <li><a href="flight-booking.html">Flight Booking</a></li>
+                        <li><a href="event-management.html">Event Management</a></li>
+                        <li><a href="#">Hotel Booking</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#activities" class="dropdown-toggle">Activities <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="beaches-sightseeing.html">Beaches Sightseeing</a></li>
+                        <li><a href="museums-tours.html">Museums Tours</a></li>
+                        <li><a href="snorkeling-tours.html">Snorkeling Tours</a></li>
+                        <li><a href="boat-safari.html">Boat Safari Tours</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#water-sports" class="dropdown-toggle">Water Sports <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="luxury-cruise.html">Luxury Cruise Ships</a></li>
+                        <li><a href="high-speed-boats.html">High-Speed Boats</a></li>
+                        <li><a href="inter-island-ferries.html">Inter-Island Ferries</a></li>
+                        <li><a href="private-yachts.html">Private Yachts</a></li>
+                        <li><a href="glass-bottom-boats.html">Glass Bottom Boats</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="contact.html">Contact</a></li>            </ul>
             <div class="book-now-btn">
-                <a href="#contact" class="nav-book-btn">Book Now</a>
+                <a href="contact.html" class="nav-book-btn">Book Now</a>
             </div>
         </nav>
     </header>
@@ -40,25 +106,28 @@
         </div>
         <div class="hero-form">
             <h3>Quick Enquiry</h3>
-            <form class="quick-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Mobile" required>
-                <select required>
+            <form class="quick-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="subject" value="New Quick Enquiry - Royal Wave Journey">
+                <input type="hidden" name="from_name" value="Royal Wave Journey Website">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Mobile" required>
+                <select name="package" required>
                     <option value="">Select Package</option>
                     <option value="honeymoon">Honeymoon Package</option>
                     <option value="group">Group Tour</option>
                     <option value="family">Family Package</option>
                 </select>
-                <select required>
+                <select name="duration" required>
                     <option value="">Duration</option>
                     <option value="3n4d">3 Nights 4 Days</option>
                     <option value="4n5d">4 Nights 5 Days</option>
                     <option value="5n6d">5 Nights 6 Days</option>
                     <option value="custom">Custom Duration</option>
                 </select>
-                <input type="date" placeholder="Departure Date" required>
-                <select required>
+                <input type="date" name="departure_date" placeholder="Departure Date" required>
+                <select name="persons" required>
                     <option value="">No. of Persons</option>
                     <option value="1">1 Person</option>
                     <option value="2">2 Persons</option>
@@ -66,7 +135,8 @@
                     <option value="4">4 Persons</option>
                     <option value="5+">5+ Persons</option>
                 </select>
-                <textarea placeholder="Message" rows="2"></textarea>
+                <textarea name="message" placeholder="Message" rows="2"></textarea>
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
                 <button type="submit" class="btn">Send Enquiry</button>
             </form>
         </div>
@@ -140,8 +210,8 @@
         </div>
     </section>
 
-    <section id="fleet" class="fleet">
-        <h2>Our Fleet</h2>
+    <section id="water-sports" class="fleet">
+        <h2>Water Sports</h2>
         <div class="fleet-grid">
             <div class="fleet-card">
                 <img src="tp2 andaman.jpg" alt="Luxury Cruise">
@@ -152,7 +222,7 @@
                         <span><i class="fas fa-users"></i> 200 Passengers</span>
                         <span><i class="fas fa-anchor"></i> AC Cabins</span>
                     </div>
-                    <a href="#" class="fleet-btn">View Details</a>
+                    <a href="luxury-cruise.html" class="fleet-btn">View Details</a>
                 </div>
             </div>
             <div class="fleet-card">
@@ -164,7 +234,7 @@
                         <span><i class="fas fa-users"></i> 50 Passengers</span>
                         <span><i class="fas fa-tachometer-alt"></i> High Speed</span>
                     </div>
-                    <a href="#" class="fleet-btn">View Details</a>
+                    <a href="high-speed-boats.html" class="fleet-btn">View Details</a>
                 </div>
             </div>
             <div class="fleet-card">
@@ -176,7 +246,7 @@
                         <span><i class="fas fa-users"></i> 300 Passengers</span>
                         <span><i class="fas fa-ship"></i> Daily Service</span>
                     </div>
-                    <a href="#" class="fleet-btn">View Details</a>
+                    <a href="inter-island-ferries.html" class="fleet-btn">View Details</a>
                 </div>
             </div>
             <div class="fleet-card">
@@ -188,7 +258,7 @@
                         <span><i class="fas fa-users"></i> 20 Passengers</span>
                         <span><i class="fas fa-star"></i> Luxury</span>
                     </div>
-                    <a href="#" class="fleet-btn">View Details</a>
+                    <a href="private-yachts.html" class="fleet-btn">View Details</a>
                 </div>
             </div>
             <div class="fleet-card">
@@ -200,7 +270,7 @@
                         <span><i class="fas fa-users"></i> 30 Passengers</span>
                         <span><i class="fas fa-eye"></i> Glass Bottom</span>
                     </div>
-                    <a href="#" class="fleet-btn">View Details</a>
+                    <a href="glass-bottom-boats.html" class="fleet-btn">View Details</a>
                 </div>
             </div>
         </div>
@@ -216,7 +286,7 @@
                 <div class="service-content">
                     <h3>Tour Operators</h3>
                     <p>One of the well-known tour operators in Andaman & Nicobar Islands, is Royal Wave Journey. We have a team of experienced professionals who ensure memorable experiences.</p>
-                    <a href="#" class="service-btn">View More</a>
+                    <a href="tour-operators.html" class="service-btn">View More</a>
                 </div>
             </div>
             <div class="service-card">
@@ -226,7 +296,7 @@
                 <div class="service-content">
                     <h3>Car & Coach Rental</h3>
                     <p>Explore the delightful tourist places in India by employing the most effective car & coach rental services. We provide comfortable and reliable transportation.</p>
-                    <a href="#" class="service-btn">View More</a>
+                    <a href="car-rental.html" class="service-btn">View More</a>
                 </div>
             </div>
             <div class="service-card">
@@ -236,7 +306,7 @@
                 <div class="service-content">
                     <h3>Flight Booking</h3>
                     <p>A well-known firm called Royal Wave Journey provides both business and leisure travellers with the best flight booking services at competitive prices.</p>
-                    <a href="#" class="service-btn">View More</a>
+                    <a href="flight-booking.html" class="service-btn">View More</a>
                 </div>
             </div>
             <div class="service-card">
@@ -246,7 +316,7 @@
                 <div class="service-content">
                     <h3>Event Management</h3>
                     <p>Do you have an important event coming up which needs to be hosted with precision? You can trust our professional event management services.</p>
-                    <a href="#" class="service-btn">View More</a>
+                    <a href="event-management.html" class="service-btn">View More</a>
                 </div>
             </div>
         </div>
@@ -261,6 +331,7 @@
                 </div>
                 <h3>Beaches Sightseeing</h3>
                 <p>Beaches Sightseeing Tours</p>
+                <a href="beaches-sightseeing.html" class="category-btn">Explore Beaches</a>
             </div>
             <div class="category-card">
                 <div class="category-icon">
@@ -268,6 +339,7 @@
                 </div>
                 <h3>Museums Tour Packages</h3>
                 <p>Museums Tours</p>
+                <a href="museums-tours.html" class="category-btn">Visit Museums</a>
             </div>
             <div class="category-card">
                 <div class="category-icon">
@@ -275,6 +347,7 @@
                 </div>
                 <h3>Snorkeling</h3>
                 <p>Snorkeling Tours</p>
+                <a href="snorkeling-tours.html" class="category-btn">Go Snorkeling</a>
             </div>
             <div class="category-card">
                 <div class="category-icon">
@@ -282,6 +355,7 @@
                 </div>
                 <h3>Boat Safari</h3>
                 <p>Boat Safari Tours</p>
+                <a href="boat-safari.html" class="category-btn">Book Safari</a>
             </div>
         </div>
     </section>
@@ -308,6 +382,13 @@
                         <div class="about-content">
                             <h2>About Royal Wave Journey</h2>
                             <p>Welcome to Royal Wave Journey for Andaman Tourism. We are the #1 rated tour operator in the islands, providing personalized itineraries and unforgettable experiences.</p>
+                            <p>With over 10 years of expertise, we have successfully served 1500+ happy clients with 500+ tours across pristine beaches, historical landmarks, and adventure activities. Our commitment to excellence makes us the most trusted name in Andaman tourism.</p>
+                            <div class="about-cta">
+                                <a href="about.html" class="read-more-btn">
+                                    <span>Read More</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                             <div class="about-area">
                                 <div class="about-items">
                                     <div class="icon">
@@ -527,26 +608,29 @@
                     </div>
                 </div>
             </div>
-            <form class="enquiry-form">
+            <form class="enquiry-form" action="https://api.web3forms.com/submit" method="POST">
                 <h3>Send us a Message</h3>
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Mobile No." required>
-                <select required>
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="subject" value="New Contact Form Enquiry - Royal Wave Journey">
+                <input type="hidden" name="from_name" value="Royal Wave Journey Website">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Mobile No." required>
+                <select name="package" required>
                     <option value="">Select Package</option>
                     <option value="honeymoon">Honeymoon Package</option>
                     <option value="group">Group Tour</option>
                     <option value="family">Family Package</option>
                 </select>
-                <select required>
+                <select name="duration" required>
                     <option value="">Duration</option>
                     <option value="3n4d">3 Nights 4 Days</option>
                     <option value="4n5d">4 Nights 5 Days</option>
                     <option value="5n6d">5 Nights 6 Days</option>
                     <option value="custom">Custom Duration</option>
                 </select>
-                <input type="date" placeholder="Departure Date" required>
-                <select required>
+                <input type="date" name="departure_date" placeholder="Departure Date" required>
+                <select name="persons" required>
                     <option value="">No. of Persons</option>
                     <option value="1">1 Person</option>
                     <option value="2">2 Persons</option>
@@ -554,7 +638,8 @@
                     <option value="4">4 Persons</option>
                     <option value="5+">5+ Persons</option>
                 </select>
-                <textarea placeholder="Description" rows="5"></textarea>
+                <textarea name="message" placeholder="Description" rows="5"></textarea>
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
                 <button type="submit">Send Message</button>
             </form>
         </div>
@@ -583,7 +668,7 @@
             </div>
             <div class="footer-section">
                 <h3>Enquiry Now</h3>
-                <a href="#contact" class="footer-btn">Contact Us</a>
+                <a href="contact.html" class="footer-btn">Contact Us</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -594,6 +679,50 @@
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-chat-widget">
+        <div class="whatsapp-chat-button" id="whatsappChatBtn">
+            <i class="fab fa-whatsapp"></i>
+            <span class="chat-tooltip">Chat with us</span>
+        </div>
+        <div class="whatsapp-chat-box" id="whatsappChatBox">
+            <div class="chat-header">
+                <div class="chat-avatar">
+                    <img src="https://via.placeholder.com/40x40/25D366/ffffff?text=RW" alt="Royal Wave Journey">
+                </div>
+                <div class="chat-info">
+                    <h4>Royal Wave Journey</h4>
+                    <span class="online-status">Online</span>
+                </div>
+                <button class="chat-close" id="chatCloseBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message bot-message">
+                    <p>Hello! 👋</p>
+                    <p>Welcome to Royal Wave Journey!</p>
+                    <p>How can we help you plan your perfect Andaman trip?</p>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <div class="quick-replies">
+                    <button class="quick-reply" data-message="I want to book a tour package">📦 Tour Packages</button>
+                    <button class="quick-reply" data-message="I need car rental service">🚗 Car Rental</button>
+                    <button class="quick-reply" data-message="I want to book flights">✈️ Flight Booking</button>
+                    <button class="quick-reply" data-message="I need help with event planning">🎉 Event Planning</button>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" placeholder="Type your message...">
+                    <button id="sendChatBtn">
+                        <i class="fab fa-whatsapp"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

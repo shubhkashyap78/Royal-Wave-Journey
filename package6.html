@@ -3,302 +3,482 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5 Nights - 6 Days Andaman Tour Package | Royal Wave Journey</title>
+    <title>5N/6D Complete Andaman Package | Royal Wave Journey</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        .package-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('andaman11.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .package-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .package-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .package-details {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .package-sidebar {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            height: fit-content;
+        }
+        .itinerary-day {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-left: 4px solid #007bff;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .day-number {
+            background: #007bff;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .price-box {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .price-amount {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .inclusions-list, .exclusions-list {
+            list-style: none;
+            padding: 0;
+        }
+        .inclusions-list li, .exclusions-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .inclusions-list li:before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .exclusions-list li:before {
+            content: "✗";
+            color: #dc3545;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .hotel-info {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .book-now-section {
+            background: #28a745;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .book-btn {
+            background: white;
+            color: #28a745;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section Start -->
     <header>
         <nav>
             <div class="logo">
                 <h1>Royal Wave Journey</h1>
             </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About Us</a></li>
-                <li><a href="index.html#packages">Tour Packages</a></li>
-                <li><a href="index.html#hotels">Hotels</a></li>
-                <li><a href="index.html#activities">Activities</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="index.html#packages" class="dropdown-toggle">Tour Packages <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="package1.html">3N/4D Port Blair - Havelock Tour</a></li>
+                        <li><a href="package2.html">4N/5D Port Blair - Havelock - Neil Island</a></li>
+                        <li><a href="package3.html">5N/6D Port Blair - Havelock - Neil Island</a></li>
+                        <li><a href="package4.html">3N/4D Port Blair - Havelock Package</a></li>
+                        <li><a href="package5.html">4N/5D Neil Island Tour</a></li>
+                        <li><a href="package6.html">5N/6D Complete Andaman Package</a></li>
+                        <li><a href="index.html#packages" class="view-all">View All Packages</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="index.html#services" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="tour-operators.html">Tour Operators</a></li>
+                        <li><a href="car-rental.html">Car & Coach Rental</a></li>
+                        <li><a href="flight-booking.html">Flight Booking</a></li>
+                        <li><a href="event-management.html">Event Management</a></li>
+                        <li><a href="#">Hotel Booking</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="index.html#activities" class="dropdown-toggle">Activities <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="beaches-sightseeing.html">Beaches Sightseeing</a></li>
+                        <li><a href="museums-tours.html">Museums Tours</a></li>
+                        <li><a href="snorkeling-tours.html">Snorkeling Tours</a></li>
+                        <li><a href="boat-safari.html">Boat Safari Tours</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="index.html#water-sports" class="dropdown-toggle">Water Sports <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="luxury-cruise.html">Luxury Cruise Ships</a></li>
+                        <li><a href="high-speed-boats.html">High-Speed Boats</a></li>
+                        <li><a href="inter-island-ferries.html">Inter-Island Ferries</a></li>
+                        <li><a href="private-yachts.html">Private Yachts</a></li>
+                        <li><a href="glass-bottom-boats.html">Glass Bottom Boats</a></li>
+                    </ul>
+                </li>
+                <                <li><a href="contact.html">Contact</a></li>            </ul>
+
             </ul>
             <div class="book-now-btn">
-                <a href="index.html#contact" class="nav-book-btn">Book Now</a>
+                <a href="contact.html" class="nav-book-btn">Book Now</a>
             </div>
         </nav>
     </header>
 
-    <!-- Breadcrumb Section -->
-    <section class="breadcrumb-section" style="margin-top: 80px;">
-        <div class="container">
-            <div class="breadcrumb-content">
-                <h1>5 Nights - 6 Days Andaman Tour Package</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="index.html#packages">Packages</a></li>
-                        <li class="breadcrumb-item active">Complete Andaman Package</li>
-                    </ol>
-                </nav>
+    <section class="package-hero">
+        <div class="hero-content">
+            <h1>5 Nights / 6 Days Complete Andaman Package</h1>
+            <p>Ultimate Luxury Experience | Complete Island Exploration</p>
+            <div style="margin-top: 20px;">
+                <span style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 20px; margin: 0 10px;">
+                    <i class="fas fa-map-marker-alt"></i> Port Blair
+                </span>
+                <span style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 20px; margin: 0 10px;">
+                    <i class="fas fa-island-tropical"></i> Havelock
+                </span>
+                <span style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 20px; margin: 0 10px;">
+                    <i class="fas fa-island-tropical"></i> Neil Island
+                </span>
             </div>
         </div>
     </section>
 
-    <!-- Tour Details Section -->
-    <section class="tour-details-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="tour-details-wrapper">
-                        <!-- Tour Image Gallery -->
-                        <div class="tour-gallery">
-                            <div class="main-image">
-                                <img src="andaman11.jpeg" alt="Complete Andaman Package" class="img-fluid">
-                            </div>
-                            <div class="gallery-thumbs">
-                                <img src="andaman6.jpeg" alt="South Andaman" class="thumb-img">
-                                <img src="andaman7.jpeg" alt="Havelock Paradise" class="thumb-img">
-                                <img src="andaman8.jpeg" alt="Neil Island" class="thumb-img">
-                                <img src="andaman9.jpeg" alt="Luxury Experience" class="thumb-img">
-                            </div>
+    <div class="package-content">
+        <div class="package-grid">
+            <div class="package-details">
+                <h2>5 Nights / 6 Days Complete Andaman Package Overview</h2>
+                <p>Embark on the ultimate luxury Andaman experience with our comprehensive 5 nights 6 days tour package. This premium journey covers Port Blair, South Andaman, Havelock, and Neil Island, offering the perfect blend of luxury accommodation, exclusive experiences, adventure activities, and cultural immersion in the pristine Andaman archipelago.</p>
+                
+                <p>Whether you seek a peaceful beach retreat or an action-packed adventure filled with trekking, snorkeling, and scuba diving experiences, this complete tour offers the perfect escape from busy city life while providing all modern conveniences and luxury amenities.</p>
+
+                <div class="hotel-info">
+                    <h3><i class="fas fa-hotel"></i> Hotel Details</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 15px;">
+                        <div>
+                            <h4>Port Blair (2 Nights)</h4>
+                            <p><strong>The Sentinel Hotel</strong><br>
+                            Premium Suite with Ocean View<br>
+                            <i class="fas fa-wifi"></i> Free WiFi | <i class="fas fa-snowflake"></i> AC | <i class="fas fa-utensils"></i> All Meals</p>
                         </div>
-
-                        <!-- Tour Overview -->
-                        <div class="tour-overview">
-                            <h2>Tour Overview</h2>
-                            <p>Embark on the ultimate luxury Andaman experience with our comprehensive 5 nights 6 days tour package. This premium journey covers Port Blair, South Andaman, Havelock, and Neil Island, offering the perfect blend of luxury accommodation, exclusive experiences, adventure activities, and cultural immersion in the pristine Andaman archipelago.</p>
-                            
-                            <div class="tour-highlights">
-                                <h3>Tour Highlights</h3>
-                                <ul class="highlights-list">
-                                    <li><i class="fas fa-check"></i> VIP arrival with luxury transfers</li>
-                                    <li><i class="fas fa-check"></i> 5-star hotel accommodation</li>
-                                    <li><i class="fas fa-check"></i> South Andaman full day exploration</li>
-                                    <li><i class="fas fa-check"></i> Chidiya Tapu sunset point visit</li>
-                                    <li><i class="fas fa-check"></i> Luxury ferry to Havelock Island</li>
-                                    <li><i class="fas fa-check"></i> Professional scuba diving session</li>
-                                    <li><i class="fas fa-check"></i> Spa and wellness treatments</li>
-                                    <li><i class="fas fa-check"></i> Romantic dinner under stars</li>
-                            </div>
+                        <div>
+                            <h4>Havelock Island (2 Nights)</h4>
+                            <p><strong>Taj Exotica Resort</strong><br>
+                            Beachfront Villa with Private Pool<br>
+                            <i class="fas fa-swimming-pool"></i> Private Pool | <i class="fas fa-spa"></i> Spa | <i class="fas fa-utensils"></i> All Meals</p>
                         </div>
-
-                        <!-- Detailed Itinerary -->
-                        <div class="detailed-itinerary">
-                            <h2>Detailed Itinerary</h2>
-                            
-                            <div class="itinerary-day">
-                                <div class="day-header">
-                                    <span class="day-number">Day 1</span>
-                                    <h3>Grand Arrival in Andaman</h3>
-                                </div>
-                                <div class="day-content">
-                                    <p>Experience VIP arrival at Veer Savarkar International Airport with luxury transfer to your 5-star hotel. Enjoy welcome drinks and premium check-in service. Attend an orientation session about Andaman's history and culture. Visit the informative Fisheries Museum to learn about marine biodiversity. Spend the evening at Aberdeen Clock Tower area, exploring local markets and culture. Conclude with a welcome dinner at your hotel featuring local and international cuisine.</p>
-                                </div>
-                            </div>
-
-                            <div class="itinerary-day">
-                                <div class="day-header">
-                                    <span class="day-number">Day 2</span>
-                                    <h3>South Andaman Exploration</h3>
-                                </div>
-                                <div class="day-content">
-                                    <p>After breakfast, embark on a full day South Andaman tour. Visit Chidiya Tapu (Bird Island), famous for its diverse bird species and stunning sunset views. Explore Munda Pahad Beach with its unique rock formations and pristine shoreline. Enjoy a scenic lunch at a picturesque location overlooking the ocean. Experience the breathtaking sunset at Chidiya Tapu sunset point, one of the most spectacular sunset viewing locations in Andaman. Return to hotel for overnight stay.</p>
-                                </div>
-                            </div>
-
-                            <div class="itinerary-day">
-                                <div class="day-header">
-                                    <span class="day-number">Day 3</span>
-                                    <h3>Journey to Havelock Paradise</h3>
-                                </div>
-                                <div class="day-content">
-                                    <p>Board the luxury ferry to Havelock Island, enjoying comfortable seating and onboard refreshments. Check-in at your premium beach resort with ocean views and welcome lunch featuring fresh seafood. Spend the afternoon at the world-famous Radhanagar Beach, consistently rated as one of the world's best beaches. Enjoy beach activities, water sports, and professional photography. Experience sunset cocktails on the beach followed by a special beachside barbecue dinner with live entertainment.</p>
-                                </div>
-                            </div>
-
-                            <div class="itinerary-day">
-                                <div class="day-header">
-                                    <span class="day-number">Day 4</span>
-                                    <h3>Havelock Adventure Day</h3>
-                                </div>
-                                <div class="day-content">
-                                    <p>Begin with sunrise yoga session on the beach, followed by breakfast at your resort. Embark on an Elephant Beach adventure excursion with professional guides. Experience scuba diving with certified instructors, exploring vibrant coral reefs and marine life. Enjoy underwater photography and snorkeling in crystal-clear waters. Savor a beach picnic lunch with tropical fruits and beverages. Return to resort for spa and wellness session featuring traditional treatments. End with a romantic dinner under the stars with acoustic music.</p>
-                                </div>
-                            </div>
-
-                            <div class="itinerary-day">
-                                <div class="day-header">
-                                    <span class="day-number">Day 5</span>
-                                    <h3>Neil Island Discovery</h3>
-                                </div>
-                                <div class="day-content">
-                                    <p>Take the ferry to Neil Island (Shaheed Dweep) and check-in at an eco-friendly resort. Visit Bharatpur Beach for coral viewing and swimming in clear waters. Explore Laxmanpur Beach with its stunning rock formations and peaceful ambiance. Visit the Natural Bridge (Howrah Bridge), a fascinating geological formation. Enjoy a glass bottom boat ride to observe colorful coral reefs and tropical fish. In the evening, return to Port Blair by ferry and check-in at your hotel for overnight stay.</p>
-                                </div>
-                            </div>
-
-                            <div class="itinerary-day">
-                                <div class="day-header">
-                                    <span class="day-number">Day 6</span>
-                                    <h3>Heritage & Farewell</h3>
-                                </div>
-                                <div class="day-content">
-                                    <p>Visit the historic Cellular Jail National Memorial with an expert guide providing detailed insights into India's freedom struggle. Experience the emotional Light and Sound Show that brings history to life. Enjoy shopping at Sagarika Government Emporium for authentic souvenirs, pearls, handicrafts, and wooden artifacts. Conclude with a farewell lunch at a premium restaurant featuring local delicacies. Transfer to airport with luxury service for departure, carrying lifetime memories of your comprehensive Andaman experience.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Inclusions & Exclusions -->
-                        <div class="inclusions-exclusions">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="inclusions">
-                                        <h3><i class="fas fa-check-circle"></i> Inclusions</h3>
-                                        <ul>
-                                            <li>Luxury accommodation (5 nights)</li>
-                                            <li>All meals & beverages</li>
-                                            <li>VIP airport transfers</li>
-                                            <li>Premium ferry transfers</li>
-                                            <li>Professional scuba diving session</li>
-                                            <li>Spa and wellness treatments</li>
-                                            <li>Expert tour guide</li>
-                                            <li>All permits and entry fees</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="exclusions">
-                                        <h3><i class="fas fa-times-circle"></i> Exclusions</h3>
-                                        <ul>
-                                            <li>Airfare to/from Port Blair</li>
-                                            <li>Personal expenses and shopping</li>
-                                            <li>Premium alcoholic beverages</li>
-                                            <li>Travel insurance</li>
-                                            <li>Tips and gratuities</li>
-                                            <li>Camera fees at monuments</li>
-                                            <li>Optional activities not mentioned</li>
-                                            <li>Any items not mentioned in inclusions</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                        <div>
+                            <h4>Neil Island (1 Night)</h4>
+                            <p><strong>Shompen Resort</strong><br>
+                            Premium Room with Sea View<br>
+                            <i class="fas fa-utensils"></i> All Meals | <i class="fas fa-beach"></i> Beach Access</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sidebar -->
-                <div class="col-lg-4">
-                    <div class="tour-sidebar">
-                        <!-- Booking Form -->
-                        <div class="booking-widget">
-                            <h3>Book This Tour</h3>
-                            <div class="price-info">
-                                <span class="price">Custom Quote</span>
-                                <span class="per-person">per person</span>
-                            </div>
-                            <form class="booking-form">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Full Name" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" placeholder="Email Address" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" placeholder="Phone Number" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="date" placeholder="Travel Date" required>
-                                </div>
-                                <div class="form-group">
-                                    <select required>
-                                        <option value="">Number of Travelers</option>
-                                        <option value="1">1 Person</option>
-                                        <option value="2">2 Persons</option>
-                                        <option value="3">3 Persons</option>
-                                        <option value="4">4 Persons</option>
-                                        <option value="5+">5+ Persons</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <textarea placeholder="Special Requirements" rows="3"></textarea>
-                                </div>
-                                <button type="submit" class="theme-btn w-100">Get Custom Quote</button>
-                            </form>
-                        </div>
+                <h3>5 Nights / 6 Days Complete Andaman Package Itinerary</h3>
+                
+                <div class="itinerary-day">
+                    <div class="day-number">Day 1</div>
+                    <h4>Grand Arrival in Andaman</h4>
+                    <p>Experience VIP arrival at Veer Savarkar International Airport with luxury transfer to your 5-star hotel. Enjoy welcome drinks and premium check-in service. Attend an orientation session about Andaman's history and culture. Visit the informative Fisheries Museum to learn about marine biodiversity. Spend the evening at Aberdeen Clock Tower area, exploring local markets and culture. Conclude with a welcome dinner at your hotel featuring local and international cuisine.</p>
+                </div>
 
-                        <!-- Tour Information -->
-                        <div class="tour-info-widget">
-                            <h3>Tour Information</h3>
-                            <ul class="tour-info-list">
-                                <li>
-                                    <i class="fas fa-clock"></i>
-                                    <span>Duration: 5 Nights / 6 Days</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-users"></i>
-                                    <span>Group Size: 2-25 People</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Location: Complete Andaman Islands</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-language"></i>
-                                    <span>Languages: English, Hindi</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-calendar"></i>
-                                    <span>Available: Year Round</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star"></i>
-                                    <span>Rating: 5.0/5 (Luxury Package)</span>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="itinerary-day">
+                    <div class="day-number">Day 2</div>
+                    <h4>South Andaman Exploration</h4>
+                    <p>After breakfast, embark on a full day South Andaman tour. Visit Chidiya Tapu (Bird Island), famous for its diverse bird species and stunning sunset views. Explore Munda Pahad Beach with its unique rock formations and pristine shoreline. Enjoy a scenic lunch at a picturesque location overlooking the ocean. Experience the breathtaking sunset at Chidiya Tapu sunset point, one of the most spectacular sunset viewing locations in Andaman. Return to hotel for overnight stay.</p>
+                </div>
 
-                        <!-- Contact Widget -->
-                        <div class="contact-widget">
-                            <h3>Need Help?</h3>
-                            <div class="contact-info">
-                                <div class="contact-item">
-                                    <i class="fas fa-phone"></i>
-                                    <span>+91 9457938908</span>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>info@royalwavejourney.com</span>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-clock"></i>
-                                    <span>Mon-Sun: 9AM-8PM</span>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-whatsapp"></i>
-                                    <span>WhatsApp Support Available</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="itinerary-day">
+                    <div class="day-number">Day 3</div>
+                    <h4>Journey to Havelock Paradise</h4>
+                    <p>Board the luxury ferry to Havelock Island, enjoying comfortable seating and onboard refreshments. Check-in at your premium beach resort with ocean views and welcome lunch featuring fresh seafood. Spend the afternoon at the world-famous Radhanagar Beach, consistently rated as one of the world's best beaches. Enjoy beach activities, water sports, and professional photography. Experience sunset cocktails on the beach followed by a special beachside barbecue dinner with live entertainment.</p>
+                </div>
+
+                <div class="itinerary-day">
+                    <div class="day-number">Day 4</div>
+                    <h4>Havelock Adventure Day</h4>
+                    <p>Begin with sunrise yoga session on the beach, followed by breakfast at your resort. Embark on an Elephant Beach adventure excursion with professional guides. Experience scuba diving with certified instructors, exploring vibrant coral reefs and marine life. Enjoy underwater photography and snorkeling in crystal-clear waters. Savor a beach picnic lunch with tropical fruits and beverages. Return to resort for spa and wellness session featuring traditional treatments. End with a romantic dinner under the stars with acoustic music.</p>
+                </div>
+
+                <div class="itinerary-day">
+                    <div class="day-number">Day 5</div>
+                    <h4>Neil Island Discovery</h4>
+                    <p>Take the ferry to Neil Island (Shaheed Dweep) and check-in at an eco-friendly resort. Visit Bharatpur Beach for coral viewing and swimming in clear waters. Explore Laxmanpur Beach with its stunning rock formations and peaceful ambiance. Visit the Natural Bridge (Howrah Bridge), a fascinating geological formation. Enjoy a glass bottom boat ride to observe colorful coral reefs and tropical fish. In the evening, return to Port Blair by ferry and check-in at your hotel for overnight stay.</p>
+                </div>
+
+                <div class="itinerary-day">
+                    <div class="day-number">Day 6</div>
+                    <h4>Heritage & Farewell</h4>
+                    <p>Visit the historic Cellular Jail National Memorial with an expert guide providing detailed insights into India's freedom struggle. Experience the emotional Light and Sound Show that brings history to life. Enjoy shopping at Sagarika Government Emporium for authentic souvenirs, pearls, handicrafts, and wooden artifacts. Conclude with a farewell lunch at a premium restaurant featuring local delicacies. Transfer to airport with luxury service for departure, carrying lifetime memories of your comprehensive Andaman experience.</p>
+                </div>
+
+                <h3>More Details about 5 Nights / 6 Days Complete Andaman Package</h3>
+                
+                <h4>Inclusions</h4>
+                <ul class="inclusions-list">
+                    <li>Luxury accommodation (5 nights) with premium amenities</li>
+                    <li>All meals & beverages throughout the tour</li>
+                    <li>VIP airport pickup and drop with luxury vehicle</li>
+                    <li>Premium ferry transfers between islands</li>
+                    <li>Professional scuba diving session with certified instructors</li>
+                    <li>Spa and wellness treatments with traditional therapies</li>
+                    <li>Expert tour guide throughout the journey</li>
+                    <li>All permits and entry fees to monuments</li>
+                    <li>Welcome drinks and special dinners</li>
+                    <li>Glass bottom boat ride experience</li>
+                    <li>GST is included in this package</li>
+                </ul>
+
+                <h4>Exclusions</h4>
+                <ul class="exclusions-list">
+                    <li>Flight Fares are not included</li>
+                    <li>Personal expenses and shopping</li>
+                    <li>Premium alcoholic beverages</li>
+                    <li>Travel insurance</li>
+                    <li>Tips and gratuities</li>
+                    <li>Camera fees at monuments</li>
+                    <li>Optional activities not mentioned</li>
+                    <li>Any items not mentioned in inclusions</li>
+                </ul>
+            </div>
+
+            <div class="package-sidebar">
+                <div class="book-now-section">
+                    <h4>Ready to Book?</h4>
+                    <p>Secure your luxury Andaman adventure today!</p>
+                    <form class="booking-form" style="margin-top: 20px;">
+                        <input type="text" placeholder="Full Name" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px;">
+                        <input type="email" placeholder="Email Address" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px;">
+                        <input type="tel" placeholder="Phone Number" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px;">
+                        <input type="date" placeholder="Travel Date" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px;">
+                        <select required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px;">
+                            <option value="">Number of Travelers</option>
+                            <option value="2">2 Persons</option>
+                            <option value="4">4 Persons</option>
+                            <option value="6">6 Persons</option>
+                            <option value="8+">8+ Persons</option>
+                        </select>
+                        <textarea placeholder="Special Requirements" rows="3" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px;"></textarea>
+                        <button type="submit" class="book-btn" style="width: 100%; margin-top: 10px;">
+                            <i class="fas fa-phone"></i> Get Custom Quote
+                        </button>
+                    </form>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h4><i class="fas fa-info-circle"></i> Quick Facts</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><i class="fas fa-calendar"></i> <strong>Duration:</strong> 5N/6D</li>
+                        <li><i class="fas fa-users"></i> <strong>Group Size:</strong> 2-25 people</li>
+                        <li><i class="fas fa-ship"></i> <strong>Transport:</strong> Luxury Cruise</li>
+                        <li><i class="fas fa-swimming-pool"></i> <strong>Activities:</strong> Scuba Diving, Snorkeling & Water Sports</li>
+                        <li><i class="fas fa-bed"></i> <strong>Stay:</strong> 5-Star Luxury Hotels</li>
+                    </ul>
+                </div>
+
+                <div style="background: #fff3cd; padding: 20px; border-radius: 10px; border-left: 4px solid #ffc107;">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Payment Terms</h4>
+                    <ul style="font-size: 14px; margin: 10px 0;">
+                        <li><strong>Advance Payment:</strong> 30% of total booking amount</li>
+                        <li><strong>Customized Pricing:</strong> Based on group size & preferences</li>
+                        <li><strong>Cancellation Policy:</strong> Refund after deducting retention amount</li>
+                        <li><strong>ID Proof:</strong> Mandatory for all travelers</li>
+                    </ul>
+                </div>
+
+                <div style="background: #d1ecf1; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                    <p>Our travel experts are here to assist you</p>
+                    <p><i class="fas fa-phone"></i> <strong>Call:</strong> +91-9242178600</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@royalwavejourney.com</p>
+                    <p><i class="fas fa-clock"></i> <strong>Hours:</strong> 9 AM - 8 PM</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 Royal Wave Journey. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Contact</h3>
+                <div class="footer-info">
+                    <h4>Royal Wave Journey</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> No.7 First Floor Durga Niwas Opp Hindi Medium School Haddo South Andaman, Sri Vijayapuram, Port Blair, Andaman & Nicobar Islands - 744102, India</p>
+                    <p><i class="fas fa-phone"></i> +91-9242178600</p>
+                    <p><i class="fas fa-envelope"></i> royalwavejourney@gmail.com</p>
                 </div>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li>Tour Operators</li>
+                    <li>Car & Coach Rental</li>
+                    <li>Flight Booking</li>
+                    <li>Event Management</li>
+                    <li>Hotel Booking</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Enquiry Now</h3>
+                <a href="contact.html" class="footer-btn">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Royal Wave Journey - All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.itinerary-day').forEach(day => {
+            day.style.opacity = '0';
+            day.style.transform = 'translateY(20px)';
+            day.style.transition = 'all 0.6s ease';
+            observer.observe(day);
+        });
+    </script>
+
+    <!-- Scroll to Top Button -->
+    <div id="scrollToTopBtn" class="scroll-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-chat-widget">
+        <div class="whatsapp-chat-button" id="whatsappChatBtn">
+            <i class="fab fa-whatsapp"></i>
+            <span class="chat-tooltip">Chat with us</span>
+        </div>
+        <div class="whatsapp-chat-box" id="whatsappChatBox">
+            <div class="chat-header">
+                <div class="chat-avatar">
+                    <img src="https://via.placeholder.com/40x40/25D366/ffffff?text=RW" alt="Royal Wave Journey">
+                </div>
+                <div class="chat-info">
+                    <h4>Royal Wave Journey</h4>
+                    <span class="online-status">Online</span>
+                </div>
+                <button class="chat-close" id="chatCloseBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message bot-message">
+                    <p>Hello! 👋</p>
+                    <p>Welcome to Royal Wave Journey!</p>
+                    <p>How can we help you plan your perfect Andaman trip?</p>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <div class="quick-replies">
+                    <button class="quick-reply" data-message="I want to book a tour package">📦 Tour Packages</button>
+                    <button class="quick-reply" data-message="I need car rental service">🚗 Car Rental</button>
+                    <button class="quick-reply" data-message="I want to book flights">✈️ Flight Booking</button>
+                    <button class="quick-reply" data-message="I need help with event planning">🎉 Event Planning</button>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" placeholder="Type your message...">
+                    <button id="sendChatBtn">
+                        <i class="fab fa-whatsapp"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
