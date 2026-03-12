@@ -374,12 +374,57 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Royal Wave Journey - All Rights Reserved.</p>
+            <p>Developed by <a href="https://www.jrtechnology.in/" target="_blank" class="footer-credit">JR Technology</a></p>
             <div class="social-links">
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-chat-widget">
+        <div class="whatsapp-chat-button" id="whatsappChatBtn">
+            <i class="fab fa-whatsapp"></i>
+            <span class="chat-tooltip">Chat with us</span>
+        </div>
+        <div class="whatsapp-chat-box" id="whatsappChatBox">
+            <div class="chat-header">
+                <div class="chat-avatar">
+                    <img src="https://via.placeholder.com/40x40/25D366/ffffff?text=RW" alt="Royal Wave Journey">
+                </div>
+                <div class="chat-info">
+                    <h4>Royal Wave Journey</h4>
+                    <span class="online-status">Online</span>
+                </div>
+                <button class="chat-close" id="chatCloseBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message bot-message">
+                    <p>Hello! 👋</p>
+                    <p>Welcome to Royal Wave Journey!</p>
+                    <p>How can we help you plan your perfect Andaman trip?</p>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <div class="quick-replies">
+                    <button class="quick-reply" data-message="I want to book a tour package">📦 Tour Packages</button>
+                    <button class="quick-reply" data-message="I need car rental service">🚗 Car Rental</button>
+                    <button class="quick-reply" data-message="I want to book flights">✈️ Flight Booking</button>
+                    <button class="quick-reply" data-message="I need help with event planning">🎉 Event Planning</button>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" placeholder="Type your message...">
+                    <button id="sendChatBtn">
+                        <i class="fab fa-whatsapp"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
