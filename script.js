@@ -175,7 +175,7 @@ function initWhatsAppChat() {
     }
     
     function sendToWhatsApp(message) {
-        const phoneNumber = '+919242178600';
+        const phoneNumber = '+919434263688';
         const encodedMessage = encodeURIComponent(`Hello! ${message}`);
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
         window.open(whatsappURL, '_blank');
@@ -303,3 +303,14 @@ class CounterAnimation {
         });
     }
 }
+
+// Package Category Tabs
+document.querySelectorAll('.pkg-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+        document.querySelectorAll('.pkg-tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.pkg-panel').forEach(function(p) { p.classList.remove('active'); });
+        tab.classList.add('active');
+        var panel = document.getElementById('tab-' + tab.getAttribute('data-tab'));
+        if (panel) panel.classList.add('active');
+    });
+});
